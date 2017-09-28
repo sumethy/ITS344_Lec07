@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+<form onsubmit="myFunction()" action="#">
+  <fieldset>
+     <legend><span class="number">1</span>Your basic info</legend>
+     <label for="name">Name:</label>
+     <input type="text" id="name">
+     
+     <label for="mail">Email:</label>
+     <input type="email" id="mail">
+     
+     <label for="password">Password:</label>
+     <input type="password" id="password">
+     
+     <label>Age:</label>
+     <!-- When a user clicks on a radio-button, it becomes checked, and all other radio-buttons with equal name become unchecked. -->
+     <input type="radio" id="under_13" value="under_13" name="user_age"><label for="under_13" class="light">Under 13</label><br>
+     <input type="radio" id="over_13" value="over_13" name="user_age"><label for="over_13" class="light">13 or older</label>
+
+   </fieldset>
+   <button type="submit">Sign Up</button>
+</form>
+<script type="text/javascript">
+  function myFunction () {
+    var $name = document.getElementById("name").value;
+    var $mail = document.getElementById("mail").value;
+    var $password = document.getElementById("password").value;
+    var $choice = document.getElementsByName("user_age");
+    var $age;
+
+    for (i=0; i < $choice.length; i++){
+      if ($choice[i].checked === true){
+        $age = "The user is " + $choice[i].value;
+        break;
+      }
+    }
+
+    console.log($name);
+    console.log($mail);
+    console.log($password);
+    console.log($age);
+    return false;
+  }
+</script>
+
+
+</body>
+</html>

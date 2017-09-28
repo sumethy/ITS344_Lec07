@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="#" id="subscribe_frm" onsubmit="myFunction()">
+  First name:<br>
+  <input type="text" name="firstname" value="Mickey" id="firstname">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" value="Mouse" id="lastname">
+  <br><br>
+  <button type="submit">Sign Up</button>
+</form>
+<script type="text/javascript">
+	function myFunction () {
+		var $firstname = document.getElementById("firstname").value;
+		var $lastname = document.getElementById("lastname").value;
+		window.alert("Hello " + $firstname + " " + $lastname);
+	}
+</script>
+</body>
+</html>
