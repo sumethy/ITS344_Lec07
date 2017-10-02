@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<form>
+	First Name:
+	<input type="text" id="firstname"> <br><br>
+
+	Last Name:
+	<input type="text" id="lastname"> <br><br>
+	<button type="button" onclick="getFormValue()">Submit</button>
+
+</form>
+
+<div class="namelist">
+	
+</div>
+
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+	
+	function getFormValue(){
+		var first = document.getElementById("firstname").value;
+		var last = document.getElementById("lastname").value;
+		console.log("First Name: " + first);
+		console.log("Last Name: " + last);
+		var $item = $("<li>");
+		$item.text(first + " " + last);
+		$("ul").append($item);
+	}
+
+	var main = function () {
+		console.log("the page is loaded")
+		var $list = $("<ul>");
+		$.getJSON("names.json", function (names) {
+			names.forEach( function (name) {
+				var $item = $("<li>");
+				$item.text(name.firstname + " " + name.lastname );
+				$list.append($item);
+			});
+			$(".namelist").append($list);
+		});	
+	};
+
+	$(document).ready(main);
+
+</script>
+
+
+
+</body>
+</html>

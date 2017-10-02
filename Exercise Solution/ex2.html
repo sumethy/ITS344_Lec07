@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Sample form:</h1>
+
+<form>
+	<label for="num1">1st Number: </label>
+   <input type="text" id="num1"> <br><br>
+  
+   <label for="num2">2nd Number: </label>
+   <input type="text" id="num2"> <br><br>
+
+   <!-- need to have type="button" below so that when user click the buttons
+   the page will not reload and we can see the calculation result. The default
+   behaviour of forms is to reload the page when the form button(s) is clicked" -->
+   <button type="button" onclick="multiply()">Multiply</button>
+   <button type="button" onclick="divide()">Divide</button>
+</form>
+
+<div class="content">
+	
+</div>
+
+<!-- load jquery so that the "$" selector works -->
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+	function multiply(){
+		$(".content").empty();
+		var $result;
+		var $num1 = parseFloat(document.getElementById("num1").value);
+		var $num2 = parseFloat(document.getElementById("num2").value);
+		x = ($num1*$num2).toFixed(4);
+		$result = $("<p>").text(String(x));
+		$(".content").append($result);
+	}
+	function divide(){
+		$(".content").empty();
+		var $result;
+		var $num1 = parseFloat(document.getElementById("num1").value);
+		var $num2 = parseFloat(document.getElementById("num2").value);
+		x = ($num1/$num2).toFixed(4);
+		$result = $("<p>").text(String(x));
+		$(".content").append($result);
+	}
+
+</script>
+
+
+</body>
+</html>

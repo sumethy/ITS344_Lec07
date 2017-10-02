@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	// "argument" is a built-in variable. It's an array where each element is an argument
+	// passed to the function.
+	function first () {
+		if (arguments.length === 1){ // if passed only one argument, return first position of array
+			array = arguments[0];
+			return array[0];
+		}
+		else {
+			array = arguments[0];
+			n = arguments[1] // n is the second argument passed to the function
+			if (n <= 0){
+				newArray = [];
+				return newArray;
+			}
+			else if ((n > 0) && (n <= array.length)){ // n is between 1 and array length
+				newArray = [];
+				for (i = 0; i < n; i++){
+					newArray.push(array[i]);
+				}
+				return newArray;
+			}
+			else { // n is greater than array length, return whole array
+				return array;
+			}
+		}
+	}
+	console.log(first([7,9,0,-2]));
+	console.log(first([], 3));
+	console.log(first([7,9,0,-2], 3));
+	console.log(first([7,9,0,-2], 6));
+	console.log(first([7,9,0,-2], -3));
+</script>
+</body>
+</html>

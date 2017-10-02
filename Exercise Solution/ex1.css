@@ -1,0 +1,65 @@
+header {
+	overflow: auto;
+	padding: 20px;
+}
+
+h1 {
+	float: left;
+}
+
+.container {
+	float: right;
+	text-align: center;
+}
+
+.container div {
+	display: inline;
+	padding: 30px;
+	vertical-align: middle;
+}
+
+#home {
+	background-color: red;
+}
+
+#about {
+	background-color: orange;
+}
+
+#contact {
+	background-color: yellow;
+}
+
+/* remove underline from all links (clicked or not) */
+
+a {
+	font-style: normal;
+	color: white;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+/* ------------------------------------------------- */
+
+body {
+	background-color: #D4D6D6;
+}
+
+h2 {
+	color: orange;
+}
+
+#text {
+	background-color: white;
+	padding: 20px;
+}
+
+#credit {
+	text-align: right;
+}
